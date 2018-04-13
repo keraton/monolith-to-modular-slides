@@ -1,0 +1,157 @@
+</body>
+</html>
+<html>
+	<head>
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/white.css">
+		<title>From monolith to modular</title>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-markdown>
+                    <textarea data-template>
+                        ## Du monolithe à la structure modulaire en utilisant Maven, IntelliJ et Stan4J
+
+                        Bowie Brotosumpeno [link](https://github.com/keraton).
+                    </textarea>
+				</section>
+				<section data-markdown>
+                    <textarea data-template>
+                        ### Qui je suis ?
+
+                        * Java Developer depuis plus de 10 ans
+                        * Je travail chez Egencia (Expedia Groups)
+                    </textarea>
+				</section>
+				<section data-markdown>
+                    <textarea data-template>
+                        ### Why Modularity
+
+                        * Better design
+                        * Better comprehension
+                    </textarea>
+				</section>
+				<section data-markdown>
+                    <textarea data-template>
+                        ### Monolith
+
+                        * Is it worth to migrate ?
+                        * What is the context ?
+                        * Cover by a test
+                    </textarea>
+				</section>
+				<section data-markdown>
+                    <textarea data-template>
+                        ### Module invariants
+
+                        * No split packages
+                        * No cyclic dependencies
+                    </textarea>
+				</section>
+				<section data-markdown>
+                    <textarea data-template>
+                        ### Tools
+
+                        * Modern IDE : IntelliJ
+                        * Dependencies analyzer : Stan4J, structure 101
+                        * Building tools : maven, gradle
+
+                    </textarea>
+				</section>
+				<section data-markdown>
+                    <textarea data-template>
+                        ### Example project
+
+                        * Triptr application : Plan your trip with Triptr !!!
+                        * Three-tier architecture
+
+                    </textarea>
+				</section>
+				<section data-markdown>
+                    <textarea data-template>
+                        ### Modular design
+
+                        * Design it with a white paper
+                        * Don't go into details
+                        * Involve all team member
+                        * DDD, Hexagonal architecture ?
+
+                    </textarea>
+				</section>
+				<section data-markdown>
+                    <textarea data-template>
+                        ### Remove split packages
+
+                        * Keep it one module
+                        * Use IDE to help refactor
+                        * Use the same level of packages depth
+
+                    </textarea>
+				</section>
+				<section data-markdown>
+                    <textarea data-template>
+                        ### Remove split packages with IntelliJ
+
+                        * Keep it one module
+                        * Use IDE to help refactor
+                        * Use the same level of packages depth
+
+                    </textarea>
+				</section>
+				<section data-markdown>
+                    <textarea data-template>
+                        ### Acyclic dependencies with Stan4J
+
+                        * Detect cyclic dependencies with dependencies analyzer
+                        * Refactor when found one
+
+                    </textarea>
+				</section>
+				<section data-markdown>
+                    <textarea data-template>
+                        ### Create modules with Maven
+
+                        * Start with packages with no dependencies
+                        * Move package to a new module
+                        * Fix the dependencies, add this new module as dependencies of the existing module
+                        * Fix existing tests (IT tests)
+                        * Continue good modular system achieved
+
+                    </textarea>
+				</section>
+				<section data-markdown>
+                    <textarea data-template>
+                        ### Encapsulation using maven for < Java 9
+
+                        * Using maven jar plugin, create classifier API jar that contains only limited packages
+                        * Module depends only this API jar for compilation
+                        * The complete jar will be provided during runtime
+                        * Access to non authorized packages will result an compilation error
+                    </textarea>
+				</section>
+				<section data-markdown>
+                    <textarea data-template>
+                        ### References
+                        * Java 9 Modularity http://shop.oreilly.com/product/0636920049494.do
+                        * IntelliJ https://www.jetbrains.com/
+                        * Stan4J http://stan4j.com/
+                        * TripTr https://github.com/keraton/triptr
+                    </textarea>
+				</section>
+			</div>
+		</div>
+		<script src="js/reveal.js"></script>
+		<script src="plugin/markdown/marked.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script>
+        Reveal.initialize({
+            // Options which are passed into marked
+            // See https://github.com/chjj/marked#options-1
+            markdown: {
+                smartypants: true
+            }
+        });
+		</script>
+	</body>
+</html>
