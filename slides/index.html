@@ -11,22 +11,22 @@
 			<div class="slides">
 				<section data-markdown>
                     <textarea data-template>
-                        ## Du monolithe à la structure modulaire en utilisant Maven, IntelliJ et Stan4J
+                        ## From monolith to modular using Maven, IntelliJ and Stan4J
 
-                        Bowie Brotosumpeno [link](https://github.com/keraton).
+                        Devoxx Fr, Bowie Brotosumpeno
                     </textarea>
 				</section>
 				<section data-markdown>
                     <textarea data-template>
-                        ### Qui je suis ?
+                        ### Who am I ?
 
-                        * Java Developer depuis plus de 10 ans
-                        * Je travail chez Egencia (Expedia Groups)
+                        * Java Developer for more than 10 years
+                        * Work currently @Egencia (Expedia Group)
                     </textarea>
 				</section>
 				<section data-markdown>
                     <textarea data-template>
-                        ### Why Modularity
+                        ### Why Modularity ?
 
                         * Better design
                         * Better comprehension
@@ -34,7 +34,7 @@
 				</section>
 				<section data-markdown>
                     <textarea data-template>
-                        ### Monolith
+                        ### Your Monolith ?
 
                         * Is it worth to migrate ?
                         * What is the context ?
@@ -53,8 +53,8 @@
                     <textarea data-template>
                         ### Tools
 
-                        * Modern IDE : IntelliJ
-                        * Dependencies analyzer : Stan4J, structure 101
+                        * Modern IDE : IntelliJ, Eclipse
+                        * Dependencies analyzer : Stan4J, Structure 101
                         * Building tools : maven, gradle
 
                     </textarea>
@@ -64,7 +64,7 @@
                         ### Example project
 
                         * Triptr application : Plan your trip with Triptr !!!
-                        * Three-tier architecture
+                        * Technical oriented architecture
 
                     </textarea>
 				</section>
@@ -72,7 +72,7 @@
                     <textarea data-template>
                         ### Modular design
 
-                        * Design it with a white paper
+                        * Design it with a simple tools
                         * Don't go into details
                         * Involve all team member
                         * DDD, Hexagonal architecture ?
@@ -116,7 +116,7 @@
                         * Move package to a new module
                         * Fix the dependencies, add this new module as dependencies of the existing module
                         * Fix existing tests (IT tests)
-                        * Continue good modular system achieved
+                        * Continue until your design is respected
 
                     </textarea>
 				</section>
@@ -125,7 +125,7 @@
                         ### Encapsulation using maven for < Java 9
 
                         * Using maven jar plugin, create classifier API jar that contains only limited packages
-                        * Module depends only this API jar for compilation
+                        * Module depends only this classifier API jar for compilation
                         * The complete jar will be provided during runtime
                         * Access to non authorized packages will result an compilation error
                     </textarea>
