@@ -13,7 +13,7 @@
                     <textarea data-template>
                         ## Du monolithe à la structure modulaire en utilisant Maven, IntelliJ et Stan4J
 
-                        Bowie Brotosumpeno [link](https://github.com/keraton).
+                        Bowie Brotosumpeno, Devoxx France 2018
                     </textarea>
 				</section>
 				<section data-markdown>
@@ -22,40 +22,42 @@
 
                         * Java Developer depuis plus de 10 ans
                         * Je travail chez Egencia (Expedia Groups)
+                        * _add some logo_
                     </textarea>
 				</section>
 				<section data-markdown>
                     <textarea data-template>
-                        ### Why Modularity
+                        ### Pourquoi Modular ?
 
-                        * Better design
-                        * Better comprehension
+                        * Meilleur design
+                        * Meilleur comprenhension
+                        * (Java 9) Meilleur encapsulation
                     </textarea>
 				</section>
 				<section data-markdown>
                     <textarea data-template>
                         ### Monolith
 
-                        * Is it worth to migrate ?
-                        * What is the context ?
-                        * Cover by a test
+                        * Faut-il migrate à monolith ?
+                        * Dans quel context ?
+                        * Projet est bien couvert par le test
                     </textarea>
 				</section>
 				<section data-markdown>
                     <textarea data-template>
                         ### Module invariants
 
-                        * No split packages
-                        * No cyclic dependencies
+                        * Pas de split packages
+                        * Pas de dependence cyclic
                     </textarea>
 				</section>
 				<section data-markdown>
                     <textarea data-template>
-                        ### Tools
+                        ### Outils
 
-                        * Modern IDE : IntelliJ
-                        * Dependencies analyzer : Stan4J, structure 101
-                        * Building tools : maven, gradle
+                        * Modern IDE : IntelliJ, Eclipse
+                        * Dependencies analyzer : Stan4J, Structure 101
+                        * Outils de build : maven, gradle
 
                     </textarea>
 				</section>
@@ -63,8 +65,8 @@
                     <textarea data-template>
                         ### Example project
 
-                        * Triptr application : Plan your trip with Triptr !!!
-                        * Three-tier architecture
+                        * Triptr application : Trip avec Triptr !!!
+                        * Architecture orienté technique
 
                     </textarea>
 				</section>
@@ -72,62 +74,50 @@
                     <textarea data-template>
                         ### Modular design
 
-                        * Design it with a white paper
-                        * Don't go into details
-                        * Involve all team member
+                        * Dessiner sur papier (ou autre)
+                        * Pas trop dans le détail
                         * DDD, Hexagonal architecture ?
 
                     </textarea>
 				</section>
 				<section data-markdown>
                     <textarea data-template>
-                        ### Remove split packages
+                        ### Supprimer le split package
 
-                        * Keep it one module
-                        * Use IDE to help refactor
-                        * Use the same level of packages depth
-
-                    </textarea>
-				</section>
-				<section data-markdown>
-                    <textarea data-template>
-                        ### Remove split packages with IntelliJ
-
-                        * Keep it one module
-                        * Use IDE to help refactor
-                        * Use the same level of packages depth
+                        * Regrouper les classes dans les bon packages
+                        * Utiliser IDE
+                        * La même profondeur de package pour faciliter les outils d'analytics
 
                     </textarea>
 				</section>
 				<section data-markdown>
                     <textarea data-template>
-                        ### Acyclic dependencies with Stan4J
+                        ### Supprimer les dépendences cyclic
 
-                        * Detect cyclic dependencies with dependencies analyzer
-                        * Refactor when found one
-
-                    </textarea>
-				</section>
-				<section data-markdown>
-                    <textarea data-template>
-                        ### Create modules with Maven
-
-                        * Start with packages with no dependencies
-                        * Move package to a new module
-                        * Fix the dependencies, add this new module as dependencies of the existing module
-                        * Fix existing tests (IT tests)
-                        * Continue good modular system achieved
+                        * Detecter les dépencedences cyclic entre les packages grace à Stan4J
+                        * Refactor pour le rendre acyclic
 
                     </textarea>
 				</section>
 				<section data-markdown>
                     <textarea data-template>
-                        ### Encapsulation using maven for < Java 9
+                        ### Création des modules
 
-                        * Using maven jar plugin, create classifier API jar that contains only limited packages
-                        * Module depends only this API jar for compilation
-                        * The complete jar will be provided during runtime
-                        * Access to non authorized packages will result an compilation error
+                        * Commencer par le package avec zero dependence
+                        * Deplacer les classes en nouveau module
+                        * Réparer les problèmes de dependences
+                        * Revenir en étape 1
+
+                    </textarea>
+				</section>
+				<section data-markdown>
+                    <textarea data-template>
+                        ### Maven Encapsulation
+
+                        * Utiliser le maven jar plugin, avec classifier API jar pour exposer le package public
+                        * Les autres module depends uniquement à ce jar classifier pour le build (compile)
+                        * Le jar non classifier est utilisé uniquement pour le runtime
+                        * Accèss aux classes non authorisé va générer une erreur de compilation
                     </textarea>
 				</section>
 				<section data-markdown>
